@@ -1,0 +1,31 @@
+<html>
+	<head></head>
+	<body>
+		<canvas width="600" height="600"></canvas>
+		<script>
+			var tela = document.querySelector('canvas');
+			var pincel = tela.getContext('2d');
+			function desenhaCirculo(x, y, raio, cor) {
+				pincel.fillStyle = cor;
+				pincel.beginPath();
+				pincel.lineWidth = 10; // stroke width
+				pincel.arc(x, y, raio, 0, 2 * Math.PI);
+				pincel.strokeStyle = cor;
+				//pincel.fill();
+				pincel.stroke(); // não preenche o interior do círculo
+			}
+
+			function simboloOlimpiadas(x, y) {
+				var raio = 50;
+				desenhaCirculo(x, y, raio, 'black');
+				desenhaCirculo(x - 2.2*raio, y, raio, 'blue');
+				desenhaCirculo(x + 2.2*raio, y, raio, 'red');
+				desenhaCirculo(x - 1.1*raio, y + raio, raio, 'yellow');
+				desenhaCirculo(x + 1.1*raio, y + raio, raio, 'green');
+			}
+			var xInicio = 400;
+			var yInicio = 200;
+			simboloOlimpiadas(xInicio, yInicio);
+		</script>
+	</body>
+</html>
