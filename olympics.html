@@ -15,8 +15,7 @@
 				pincel.stroke(); // não preenche o interior do círculo
 			}
 
-			function simboloOlimpiadas(x, y) {
-				var raio = 50;
+			function simboloOlimpiadas(x, y, raio) {
 				desenhaCirculo(x, y, raio, 'black');
 				desenhaCirculo(x - 2.2*raio, y, raio, 'blue');
 				desenhaCirculo(x + 2.2*raio, y, raio, 'red');
@@ -25,7 +24,8 @@
 			}
 			var xInicio = 400;
 			var yInicio = 200;
-			simboloOlimpiadas(xInicio, yInicio);
+			var raio = 60;
+			simboloOlimpiadas(xInicio, yInicio, raio);
 		</script>
 	</body>
 </html>
